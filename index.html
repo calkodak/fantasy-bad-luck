@@ -94,13 +94,13 @@ html{background:var(--color-bg)}body{margin:0 auto;max-width:1200px;padding:20px
   <header id="top">
     <h1>CQL Bad Luck Index</h1>
     <p class="take">Who's been robbed by the schedule, whose opponents keep going nuclear, and who's living in the injury ward. Updated every Wednesday from Sleeper.</p>
-    <p class="take">Through <span id="wk-label">the season so far</span>, the unluckiest team is <b class="dash-skeleton" data-source="luck_index" data-field="team" data-where="rank=1">—</b> (<span data-source="luck_index" data-field="manager" data-where="rank=1">—</span>).</p>
+    <p class="take">Through <span id="wk-label">the season so far</span>, the unluckiest team overall (highest bad luck score) is <b class="dash-skeleton" data-source="luck_index" data-field="team" data-where="rank=1">—</b> (<span data-source="luck_index" data-field="manager" data-where="rank=1">—</span>).</p>
   </header>
 
   <section class="cards" id="hl-cards">
     <div class="card"><div class="lbl">Most robbed <button type="button" class="qi" aria-label="What is this?" data-tip="The team the schedule has cost the most wins: biggest gap below what their scores earned against the whole league.">?</button></div><div class="big dash-skeleton" data-source="headlines" data-field="manager" data-where="key=robbed">—</div><div class="sub"><span data-source="headlines" data-field="detail" data-where="key=robbed">—</span></div></div>
     <div class="card"><div class="lbl">Biggest thief <button type="button" class="qi" aria-label="What is this?" data-tip="The team the schedule has gifted the most wins: biggest gap above what their scores earned.">?</button></div><div class="big dash-skeleton" data-source="headlines" data-field="manager" data-where="key=thief">—</div><div class="sub"><span data-source="headlines" data-field="detail" data-where="key=thief">—</span></div></div>
-    <div class="card"><div class="lbl">Hottest opponents <button type="button" class="qi" aria-label="What is this?" data-tip="The team whose opponents have scored the most above their usual (their average in other games), per week.">?</button></div><div class="big dash-skeleton" data-source="headlines" data-field="manager" data-where="key=pa">—</div><div class="sub"><span data-source="headlines" data-field="detail" data-where="key=pa">—</span></div></div>
+    <div class="card"><div class="lbl">Hottest opponents <button type="button" class="qi" aria-label="What is this?" data-tip="The team whose opponents score the most above their usual when playing them, per week. Their usual is what they average in their other games.">?</button></div><div class="big dash-skeleton" data-source="headlines" data-field="manager" data-where="key=pa">—</div><div class="sub"><span data-source="headlines" data-field="detail" data-where="key=pa">—</span></div></div>
     <div class="card"><div class="lbl">Most heartbreaks <button type="button" class="qi" aria-label="What is this?" data-tip="Most losses by under 5 points this season. Ties go to the team with the smaller combined margin.">?</button></div><div class="big dash-skeleton" data-source="headlines" data-field="manager" data-where="key=heart">—</div><div class="sub"><span data-source="headlines" data-field="detail" data-where="key=heart">—</span></div></div>
     <div class="card"><div class="lbl">Injury ward <button type="button" class="qi" aria-label="What is this?" data-tip="The team that has lost the most points to injuries to its starters this season. Tap their number in the Inj column of the rankings for the full list.">?</button></div><div class="big dash-skeleton" data-source="headlines" data-field="manager" data-where="key=injury">—</div><div class="sub"><span data-source="headlines" data-field="detail" data-where="key=injury">—</span></div></div>
   </section>
@@ -115,19 +115,19 @@ html{background:var(--color-bg)}body{margin:0 auto;max-width:1200px;padding:20px
           <th data-field="manager"><button data-k="manager">Manager</button></th>
           <th data-field="record" class="hide-sm"><button data-k="wins">Record</button><button type="button" class="qi" aria-label="What is this?" data-tip="Real win-loss record on Sleeper.">?</button></th>
           <th data-field="index"><button data-k="index">Score</button><button type="button" class="qi" aria-label="What is this?" data-tip="The bad luck score. 50 is average luck, 60+ is very unlucky, 40 or below has had the breaks. Built from the three columns to the right: wins stolen or gifted (50%), opponents vs norm, per week (20%) and points lost to injury (30%).">?</button></th>
-          <th data-field="schedule_luck_wins"><button data-k="schedule_luck_wins"><span class="lg">Wins stolen / gifted</span><span class="sm">Wins</span></button><button type="button" class="qi" aria-label="What is this?" data-tip="Wins stolen or gifted by the schedule: real wins minus the wins your scores earned against the whole league. For example, -0.75 means the schedule has cost about three quarters of a win, and +1.5 means it has handed over one and a half.">?</button></th>
+          <th data-field="schedule_luck_wins"><button data-k="schedule_luck_wins"><span class="lg">Wins stolen / gifted</span><span class="sm">Wins</span></button><button type="button" class="qi" aria-label="What is this?" data-tip="Wins stolen or gifted by the schedule: real wins minus the wins your scores earned against the whole league. For example, −0.75 means the schedule has cost about three quarters of a win, and +1.5 means it has handed over one and a half.">?</button></th>
           <th data-field="opp_hot"><button data-k="opp_hot"><span class="lg">Opponents vs norm, per week</span><span class="sm">Opp/wk</span></button><button type="button" class="qi" aria-label="What is this?" data-tip="Points a week your opponents scored against you above what they average in their other games. For example, +20 means opponents put up about 20 more a week against this team than they usually do.">?</button></th>
-          <th data-field="injury_points_lost"><button data-k="injury_points_lost"><span class="lg">Points lost to injury*</span><span class="sm">Inj*</span></button><button type="button" class="qi" aria-label="What is this?" data-tip="Points lost when starters missed games through injury. A starter is anyone in your lineup that week or the week before, drafted or picked up. Each missed game counts his average minus what a replacement-level player at his position scores in this league; leaving a game early counts what he didn&#x27;t score. Tap a team&#x27;s number to see the players.">?</button></th>
+          <th data-field="injury_points_lost"><button data-k="injury_points_lost"><span class="lg">Points lost to injury*</span><span class="sm">Inj*</span></button><button type="button" class="qi" aria-label="What is this?" data-tip="Points lost when starters missed games through injury. A starter is anyone in your lineup that week or the week before, whether drafted, picked up or traded for. Each missed game counts his average minus what a replacement-level player at his position scores in this league; leaving a game early counts what he didn&#x27;t score. Tap a team&#x27;s number to see the players.">?</button></th>
         </tr></thead>
         <tbody></tbody>
       </table>
     </div>
-    <p class="note">The score is built from the three columns on the right: wins stolen or gifted by the schedule (50%, minus means stolen), points a week opponents scored above their usual (20%) and points lost to injury (30%). *Injury points use Sleeper scoring for starters who missed games or left early through injury, with each absence checked against injury news. Tap a number to see who. Think something's missing? Say so in the chat.</p>
+    <p class="note">The score is built from the three columns on the right: wins stolen or gifted by the schedule (50%, minus means stolen), points a week opponents scored above their usual (20%) and points lost to injury (30%). *Injury points use Sleeper scoring for starters who missed games or left early through injury, with each absence checked against injury news. Tap a team's injury number to see which players. Think something's missing? Say so in the chat.</p>
   </section>
 
   <section class="card" id="luck-standings">
     <h2>Luck-adjusted standings</h2>
-    <p class="note">The ladder if every team played all 11 others every week, so only your scores count. "Record vs everyone" adds those up: 40-26 after six weeks means your scores would have beaten 40 of the 66 teams you'd have faced. The dashed line is the playoff cut.</p>
+    <p class="note">The ladder if every team played all 11 others every week, so only your scores count. The record vs everyone (Vs all on phones) adds those up: 40-26 after six weeks means your scores would have beaten 40 of the 66 teams you'd have faced. The dashed line is the playoff cut.</p>
     <div class="tbl-wrap">
       <table id="adj-table" data-source="luck_standings" data-row-key="manager">
         <thead><tr>
@@ -159,8 +159,8 @@ html{background:var(--color-bg)}body{margin:0 auto;max-width:1200px;padding:20px
   <section class="card method" id="method">
     <h2>How the score works</h2>
     <p><b>Wins stolen or gifted (50%).</b> Real wins minus the wins your scores earned against everyone. Each week you earn a fraction of a win for every team you outscored: beat 8 of 11 and that's 0.73 of a win. Score 150 and lose and you were robbed; score 85 and win and you got away with it.</p>
-    <p><b>Opponents got hot (20%).</b> Each week, how many more points your opponent scored against you than they average in their other games, averaged across your games. Drawing a team on a heater is luck; drawing a team that's simply good is already covered by the first part. It overlaps with wins stolen, so it counts for less.</p>
-    <p><b>Injuries (30%).</b> For every starter who missed games through injury (anyone in your lineup that week or the week before, whether drafted, picked up or traded for), each missed game counts his average points minus what a replacement-level player at his position scores in this league (the 12th best QB, 24th RB, 36th WR and 12th TE). Leaving a game early counts what he didn't score. It's measured against a league-wide replacement, not your bench, because a deep bench is skill and losing a star is luck. Players you drop stop counting.</p>
+    <p><b>Opponents vs norm, per week (20%).</b> Each week, how many more points your opponent scored against you than they average in their other games, averaged across your games. Drawing a team on a heater is luck; drawing a team that's simply good is already covered by the first part. It overlaps with wins stolen, so it counts for less.</p>
+    <p><b>Points lost to injury (30%).</b> For every starter who missed games through injury (anyone in your lineup that week or the week before, whether drafted, picked up or traded for), each missed game counts his average points minus what a replacement-level player at his position scores in this league (the 12th best QB, 24th RB, 36th WR and 12th TE). Leaving a game early counts what he didn't score. It's measured against a league-wide replacement, not your bench, because a deep bench is skill and losing a star is luck. Players you drop stop counting.</p>
     <p>Each part is compared across the 12 teams and combined, so 50 is average luck, 60+ is very unlucky and 40 or below has had the breaks.</p>
   </section>
 </div>
@@ -223,7 +223,7 @@ dash.calc('headlines', {
     const close = d3.rollup(weekly.filter(r => r.result === 'L' && n(r.opponent_points) - n(r.points) < 5), v => ({ c: v.length, m: v.map(r => n(r.opponent_points) - n(r.points)) }), r => r.manager);
     const hb = [...close].sort((a, b) => b[1].c - a[1].c || d3.sum(a[1].m) - d3.sum(b[1].m))[0];
     const ij = injuries.slice().sort((a, b) => n(b.injury_points_lost) - n(a.injury_points_lost))[0];
-    const who = String(ij.notes || '').split(', ').map(x => (x.match(/^(.*?) \d+ pts/) || [])[1]).filter(Boolean).slice(0, 3);
+    const who = String(ij.notes || '').split(', ').map(x => (x.match(/^(.*?) \d+ pts? \(/) || [])[1]).filter(Boolean).slice(0, 3);
     const whoTxt = who.length > 1 ? `${who.slice(0, -1).join(', ')} and ${who[who.length - 1]}` : who.join('');
     return [
       { key: 'robbed', manager: lo.manager, detail: `${f2(lo.schedule_luck_wins)} wins below what their scores earned` },
@@ -235,7 +235,7 @@ dash.calc('headlines', {
   }
 });
 dash.calc('luck_trend', {
-  title: 'Running luck by week',
+  title: 'Schedule luck by week',
   description: 'Each week, a win (1) or loss (0) minus the share of the other 11 teams outscored; summed week by week.',
   inputs: ['weekly'],
   fn: (weekly) => {
@@ -374,8 +374,8 @@ dash.calc('luck_trend', {
     });
     const pts = src.data.map(r => [x(r.week), y(r.cum_luck), r]), dl = d3.Delaunay.from(pts, p => p[0], p => p[1]);
     svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).attr('fill', 'transparent')
-      .on('mousemove', ev => { const [mx, my] = d3.pointer(ev); const r = pts[dl.find(mx, my)][2]; tipAt(box, tip, ev, [`Week ${r.week}`, r.manager, `This week: ${s2(r.week_luck)}`, `Running luck: ${s2(r.cum_luck)}`]); })
-      .on('click', ev => { const [mx, my] = d3.pointer(ev); const r = pts[dl.find(mx, my)][2]; if (r.manager !== hl) { hl = r.manager; sel.value = hl; drawTrend(); } const t = box.querySelector('.tip'); tipAt(box, t, ev, [`Week ${r.week}`, r.manager, `This week: ${s2(r.week_luck)}`, `Running luck: ${s2(r.cum_luck)}`]); })
+      .on('mousemove', ev => { const [mx, my] = d3.pointer(ev); const r = pts[dl.find(mx, my)][2]; tipAt(box, tip, ev, [`Week ${r.week}`, r.manager, `This week: ${s2(r.week_luck)} wins`, `Running total: ${s2(r.cum_luck)}`]); })
+      .on('click', ev => { const [mx, my] = d3.pointer(ev); const r = pts[dl.find(mx, my)][2]; if (r.manager !== hl) { hl = r.manager; sel.value = hl; drawTrend(); } const t = box.querySelector('.tip'); tipAt(box, t, ev, [`Week ${r.week}`, r.manager, `This week: ${s2(r.week_luck)} wins`, `Running total: ${s2(r.cum_luck)}`]); })
       .on('mouseleave', () => { if (!touchy) tip.style.display = 'none'; });
   }
   const qtip = document.createElement('div'); qtip.className = 'qtip'; qtip.setAttribute('role', 'tooltip'); root.appendChild(qtip);
